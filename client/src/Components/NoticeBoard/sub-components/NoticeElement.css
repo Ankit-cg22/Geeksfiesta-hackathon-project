@@ -1,0 +1,25 @@
+.notice-card {
+  padding: 20px;
+  background-color: rgb(180, 224, 209);
+  text-align: center;
+  width: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: space-around;
+  border-radius: 1.5rem;
+  margin: 1rem;
+  width: 80%;
+}
+
+h4,
+p {
+  padding: 10px;
+  width: 100%;
+}
+
+@media screen and (max-width: 400px) {
+  .notice-card {
+    width: 100%;
+  }
+}
