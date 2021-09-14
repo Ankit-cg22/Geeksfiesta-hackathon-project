@@ -39,23 +39,17 @@ body {
   border-bottom: 2px solid grey;
 }
 
-.student-card {
-  padding: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 2rem;
-  height: 50vh;
-  width: 50%;
-  background-color: rgb(180, 224, 209);
-  border-radius: 1.5rem;
+.direction {
+  text-align: center;
 }
 
-@media screen and (max-width: 700px) {
-  .student-card {
-    width: 95%;
-  }
+.edit-form-holder {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
+
 /*
   .student-list {
     width: 100%;

@@ -5,6 +5,8 @@ export const studentInfo = [
         studentId : "B120001",
         gender: "M",
         age: 19,
+        achievements:"",
+        linkToResume:"",
         
     },
     {
@@ -13,6 +15,8 @@ export const studentInfo = [
         studentId : "B120002",
         gender: "M",
         age: 19,
+        achievements:"",
+        linkToResume:"",
         
     },
     {
@@ -21,6 +25,8 @@ export const studentInfo = [
         studentId : "B120003",
         gender: "F",
         age: 19,
+        achievements:"",
+        linkToResume:"",
         
     },
     {
@@ -29,6 +35,8 @@ export const studentInfo = [
         studentId : "B120004",
         gender: "F",
         age: 19,
+        achievements:"",
+        linkToResume:"",
         
     },
     {
@@ -37,6 +45,8 @@ export const studentInfo = [
         studentId : "B120005",
         gender: "F",
         age: 19,
+        achievements:"",
+        linkToResume:"",
         
     },
     {
@@ -44,8 +54,9 @@ export const studentInfo = [
         name: "Ananay Methi",
         studentId : "B120006",
         gender: "M",
-        age: 19,
-        
+        age: 19, 
+        achievements:"",
+        linkToResume:"",
     },
     {
         id : Math.random() ,    
@@ -53,6 +64,8 @@ export const studentInfo = [
         studentId : "B120007",
         gender: "F",
         age: 19,
+        achievements:"",
+        linkToResume:"",
         
     },
     {
@@ -61,6 +74,8 @@ export const studentInfo = [
         studentId : "B120008",
         gender: "M",
         age: 19,
+        achievements:"",
+        linkToResume:"",
         
     },
     {
@@ -69,6 +84,8 @@ export const studentInfo = [
         studentId : "B120009",
         gender: "F",
         age: 19,
+        achievements:"",
+        linkToResume:"",
         
     },
     {
@@ -77,6 +94,8 @@ export const studentInfo = [
         studentId : "B120010",
         gender: "M",
         age: 19,
+        achievements:"",
+        linkToResume:"",
         
     },
     

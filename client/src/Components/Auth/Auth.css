@@ -1,8 +1,10 @@
-body{
-    text-align : center;
+body {
+  text-align: center;
 }
 
-.content{
-    height:85vh;
-    padding:5px;
+.auth-content {
+  height: 85vh;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
 }

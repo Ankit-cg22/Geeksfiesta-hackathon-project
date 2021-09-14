@@ -1,9 +1,12 @@
-import React , {useReducer} from 'react'
+import React , { useState , useReducer} from 'react'
 import './StudentInfo.css'
 
 import {studentInfo} from './data/student-data'
 import StudentListItem from './sub-components/StudentListItem/StudentListItem'
 import StudentDetails from './sub-components/StudentDetails/StudentDetails'
+
+import DataEditForm from './sub-components/DataEditForm/DataEditForm'
+
 
 const ACTIONS = {
     SHOW_INFO : "info"
@@ -33,13 +36,15 @@ export default function StudentInfo() {
         
     }
 
+    const [editForm, setEditForm] = useState(false)
+
 
     return (
         <div className="student-content">
             <div className="student-title">
                 <h1> Student Info </h1>
             </div>
-
+{!editForm ?
             <div className="info-area">
 
                 <div className="student-list">
@@ -59,17 +64,24 @@ export default function StudentInfo() {
                     <h2 className="student-subHead">Student Details</h2>
 
                     <div className="student-card-holder">
-                        <div className="student-card">
+                        
                             {studentDetails.length == 1 ?
-                                <StudentDetails id= {studentDetails[0].id} student={studentDetails[0]}/>
+                                <StudentDetails id= {studentDetails[0].id} student={studentDetails[0]} setEditForm={setEditForm} editForm={editForm}/>
                             :
-                                <p>Click on 'Details' button to view details of the student.</p>
+                                <p className="direction">Click on 'Details' button to view details of the student.</p>
                             }
-                        </div>
+
+                            
                     </div>
+                    
                 </div>
 
             </div>
+            :
+                     <div className="edit-form-holder">
+                         <DataEditForm student={studentDetails[0]}/>
+                     </div>
+            }
 
         </div>
     )
