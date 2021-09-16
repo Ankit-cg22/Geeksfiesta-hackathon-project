@@ -1,12 +1,12 @@
-import React , { useState , useReducer} from 'react'
+import React , { useState , useReducer , useEffect} from 'react'
 import './StudentInfo.css'
 
-import {studentInfo} from './data/student-data'
 import StudentListItem from './sub-components/StudentListItem/StudentListItem'
 import StudentDetails from './sub-components/StudentDetails/StudentDetails'
 
 import DataEditForm from './sub-components/DataEditForm/DataEditForm'
 
+import { getStudentInfo } from '../../actions/actions'
 
 const ACTIONS = {
     SHOW_INFO : "info"
@@ -26,6 +26,11 @@ function reducerShow(studentData , action ){
 
 export default function StudentInfo() {
 
+    useEffect(() => {
+        getStudentInfo(setStudentInfo)
+    }, [])
+
+    const [studentInfo , setStudentInfo] = useState([])
     const [studentDetails , dispatchShow]= useReducer( reducerShow , studentInfo);
 
     const handleClick =(student) =>{
@@ -44,21 +49,31 @@ export default function StudentInfo() {
             <div className="student-title">
                 <h1> Student Info </h1>
             </div>
-{!editForm ?
+            {!editForm ?
             <div className="info-area">
 
-                <div className="student-list">
+               {studentInfo.length > 0 ? 
+                         <div className="student-list">
+                         <h2 className="student-subHead">Student List</h2>
+                         
+                         {studentInfo.map((student) => {
+                             return(
+                                 <StudentListItem id = {student.id} student={student} handlClick={handleClick}/>
+                             )
+                         })
+                         
+                         }
+     
+                     </div>
+                :
+                    <div className="student-list">
                     <h2 className="student-subHead">Student List</h2>
                     
-                    {studentInfo.map((student) => {
-                        return(
-                            <StudentListItem id = {student.id} student={student} handlClick={handleClick}/>
-                        )
-                    })
-                    
-                    }
+                         <p id="loading">Loading data ...</p>
 
-                </div>
+                    </div>
+
+               }
 
                 <div className="student-details">
                     <h2 className="student-subHead">Student Details</h2>
