@@ -1,4 +1,4 @@
-import React from 'react'
+import React , {useState , useEffect} from 'react'
 import './App.css'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
@@ -12,9 +12,18 @@ import StudentInfo from './Components/StudentInfo/StudentInfo'
 
 
 export default function App() {
+
+  const [currentUser , setCurrentUser] = useState("")
+
+  useEffect(() => {
+    setCurrentUser(JSON.parse(localStorage.getItem('currentUser')))
+  }, [])
+  
+
+  
   return (
     <div>
-        <NavBar/>
+        <NavBar currentUser={currentUser?.result}/>
 
         <Router>
           <Switch>
@@ -23,7 +32,7 @@ export default function App() {
             </Route>  
 
             <Route exact path='/notice-board'>
-               <NoticeBoard/>
+               <NoticeBoard />
             </Route>  
 
             <Route exact path='/timetable'>
@@ -35,7 +44,7 @@ export default function App() {
             </Route> 
 
             <Route exact path='/auth'>
-                <Auth/>
+                <Auth setCurrentUser={setCurrentUser} />
             </Route>  
           </Switch>
         </Router>

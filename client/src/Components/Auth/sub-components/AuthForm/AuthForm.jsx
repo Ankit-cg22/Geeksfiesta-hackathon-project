@@ -1,16 +1,21 @@
 import React , {useState} from 'react'
 import './AuthForm.css'
+import { signUp } from '../../../../actions/authActions';
+import { signIn } from '../../../../actions/authActions';
+import { useHistory } from 'react-router-dom';
 
 const initialData = { name:'', email: '' , password: '' , confirmPassword: ''};
 
-export default function AuthForm() {
+export default function AuthForm({setCurrentUser}) {
+
+    const history = useHistory()
     
     const [isSignUp , setIsSignUp] = useState(false)
     const [authFormData, setAuthFormData] = useState(initialData)
 
     const handleSubmit =(e)=>{
         e.preventDefault()  
-        console.log(authFormData)
+        {isSignUp ? signUp(authFormData , history , setCurrentUser) : signIn(authFormData , history , setCurrentUser)}
     }
     const handleChange = (e) => {
         setAuthFormData({  ...authFormData , [e.target.name]: e.target.value })
