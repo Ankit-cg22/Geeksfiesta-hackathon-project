@@ -1,0 +1,69 @@
+body {
+  text-align: center;
+}
+
+.student-content {
+  height: 85vh;
+  padding: 5px;
+  overflow: hidden;
+}
+
+.student-title {
+  padding-bottom: 3px;
+  border-bottom: 2px solid grey;
+}
+
+.info-area {
+  height: 100vh;
+  display: flex;
+}
+
+.student-list {
+  height: 80vh;
+  width: 30%;
+  border-right: 2px solid grey;
+  overflow: scroll;
+}
+
+.student-details {
+  height: 100vh;
+  width: 70%;
+}
+.student-card-holder {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+
+.student-subHead {
+  border-bottom: 2px solid grey;
+}
+
+.direction {
+  text-align: center;
+}
+
+.edit-form-holder {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/*
+  .student-list {
+    width: 100%;
+  }
+
+  .student-details {
+    width: 100%;
+  }
+
+  .student-card {
+    width: 100%;
+  }
+} */
+
+#loading {
+  text-align: center;
+}
