@@ -10,12 +10,16 @@ import HomePage from './Components/HomePage/HomePage'
 import NoticeBoard from './Components/NoticeBoard/NoticeBoard'
 import StudentInfo from './Components/StudentInfo/StudentInfo'
 
+import { getStudentData } from './actions/dataActions'
 
 export default function App() {
 
   const [currentUser , setCurrentUser] = useState("")
 
   useEffect(() => {
+
+    getStudentData();
+
     setCurrentUser(JSON.parse(localStorage.getItem('currentUser')))
   }, [])
   
@@ -40,7 +44,7 @@ export default function App() {
             </Route>  
 
             <Route exact path='/student-info'>
-                <StudentInfo/>
+                <StudentInfo currentUser={currentUser?.result}/>
             </Route> 
 
             <Route exact path='/auth'>

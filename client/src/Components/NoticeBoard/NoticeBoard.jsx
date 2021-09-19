@@ -1,13 +1,13 @@
 import React ,{useEffect , useState} from 'react'
 import './NoticeBoard.css'
 
-import { getNoticeData } from '../../actions/actions'
+import { getNoticeData } from '../../actions/dataActions'
 import NoticeElement from './sub-components/NoticeElement'
 
 export default function NoticeBoard() {
 
     useEffect(() => {
-        getNoticeData(setNoticeData)
+        getNoticeData(setNoticeData)  
     }, [])
 
     const [noticeData , setNoticeData] = useState([])

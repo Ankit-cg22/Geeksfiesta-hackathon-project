@@ -1,9 +1,7 @@
 import React, { useState } from 'react'
 import './StudentDetails.css'
 
-export default function StudentDetails({ student , setEditForm ,editForm }) {
-
-
+export default function StudentDetails({ student , setEditForm ,editForm ,currentUser }) {
 
     return (
        
@@ -16,7 +14,7 @@ export default function StudentDetails({ student , setEditForm ,editForm }) {
                     <p>Achievements : {student.achievements}</p>
                     <p>Resume: {student.linkToResume}</p>
                    
-                    <button onClick={() => setEditForm(!editForm)}> Edit </button>
+                    {student.studentId === currentUser?.studentId && (<button onClick={() => setEditForm(!editForm)}> Edit </button>)}
                 </div>
         
             </div>
