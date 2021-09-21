@@ -30,13 +30,3 @@ export const updateStudentData=  async(id , updatedData, studentInfo  ,history )
     }
 }
 
-
-export const getNoticeData =async (setNoticeData)  => {
-    
-    try {
-        const {data} =  await api.fetchNoticeData();
-        setNoticeData(data)
-    } catch (error) {
-        console.log(error.message);
-    }
-}

@@ -23,3 +23,23 @@ p {
     width: 100%;
   }
 }
+
+.notice-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#edit-button {
+  height: fit-content;
+  width: fit-content;
+  padding: 0.5rem;
+  border-radius: 0.6rem;
+  margin: 0.2rem;
+  background-color: white;
+  cursor: pointer;
+}
+
+#edit-button:hover {
+  transform: scale(1.2);
+}

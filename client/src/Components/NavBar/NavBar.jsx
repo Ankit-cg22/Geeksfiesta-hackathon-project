@@ -1,12 +1,14 @@
 import React  from 'react'
 import './NavBar.css'
+import { useHistory } from 'react-router-dom'
 
 export default function NavBar({currentUser , setCurrentUser}) {
     
-  
+    const history = useHistory();
     const handleLogOut = () => {
         localStorage.clear()
         setCurrentUser('')
+        history.push('/')
     }
 
     return (

@@ -11,6 +11,7 @@ import NoticeBoard from './Components/NoticeBoard/NoticeBoard'
 import StudentInfo from './Components/StudentInfo/StudentInfo'
 
 import { getStudentData } from './actions/dataActions'
+import { getNoticeData } from './actions/noticedata'
 
 export default function App() {
 
@@ -19,15 +20,18 @@ export default function App() {
   useEffect(() => {
 
     getStudentData();
+    getNoticeData();
 
-    setCurrentUser(JSON.parse(localStorage.getItem('currentUser')))
+    setCurrentUser(JSON.parse(localStorage.getItem('currentUser')))   
+
+    
   }, [])
   
 
   
   return (
     <div>
-        <NavBar currentUser={currentUser?.result}/>
+        <NavBar currentUser={currentUser?.result} setCurrentUser={setCurrentUser}/>
 
         <Router>
           <Switch>
@@ -36,7 +40,7 @@ export default function App() {
             </Route>  
 
             <Route exact path='/notice-board'>
-               <NoticeBoard />
+               <NoticeBoard currentUser={currentUser?.result}/>
             </Route>  
 
             <Route exact path='/timetable'>

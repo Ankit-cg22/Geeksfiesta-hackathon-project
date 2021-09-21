@@ -1,38 +1,65 @@
 import React ,{useEffect , useState} from 'react'
 import './NoticeBoard.css'
 
-import { getNoticeData } from '../../actions/dataActions'
-import NoticeElement from './sub-components/NoticeElement'
+import NoticeElement from './sub-components/NoticeElement/NoticeElement'
 
-export default function NoticeBoard() {
+import EditForm from './sub-components/EditForm/EditForm'
+
+export default function NoticeBoard(currentUser) {
+
+    const [editForm ,setEditForm] = useState(false)
+
+    console.log("ola");
+
 
     useEffect(() => {
-        getNoticeData(setNoticeData)  
+        setNoticeData(JSON.parse(localStorage.getItem('noticeData')))
     }, [])
 
+
     const [noticeData , setNoticeData] = useState([])
-
+    const [currentNotice , setCurrentNotice] = useState([])
     return (
+
         <div className="notice-board-content">
-            <h1 >Notice Board</h1>
+    
+        <h1 >Notice Board</h1>
 
-            {noticeData.length ?
-                <div className="notice-area">
-            
-                {noticeData.map((notice) => {
-                    return(
-                        <NoticeElement id={notice.id}  notice={notice}/>
-                    )
-                })}
+        {!editForm ?
+           
+                <div className="sub-content">
 
-            </div>
-            :
-                <div className="notice-area">
-            
-                    <p id="loading"> Loading data ...   </p>
+                    {currentUser?.currentUser?.classRep ?
+                        <div className="add-button" onClick={() => setEditForm(true)}>
+                            <p>Add new notice </p>
+                        </div>
+                    :
+                        null    
+                    }
 
+                    {noticeData.length ?
+                        <div className="notice-area">
+                        {noticeData.map((notice) => {
+                            return(
+                                <NoticeElement id={notice.id}  notice={notice} setEditForm={setEditForm} setCurrentNotice={setCurrentNotice} currentUser={currentUser} />
+                            )
+                        })}
+                    </div>
+                    :
+                        <div className="notice-area">
+                            <p id="loading"> Loading data ...   </p>
+                        </div>
+                        }
                 </div>
-        }
-        </div>
+               
+    
+            :
+                <div className="sub-content">
+                    
+                    <EditForm notice ={currentNotice} setNoticeData={setNoticeData} noticeData={noticeData} setEditForm={setEditForm}/>
+                    
+                </div>
+    }
+</div>
     )
 }

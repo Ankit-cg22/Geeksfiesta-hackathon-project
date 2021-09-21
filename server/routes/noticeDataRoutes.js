@@ -1,11 +1,20 @@
 import  express from "express";
 
+import {   getNoticeData , createNotice , updateNoticeData , deleteNotice} from "../controllers/noticeDataControllers.js";
+
 const router = express.Router()
 
-import {noticeData} from '../data/NoticeBoardData.js'
 
-router.get('/' , (req,res) => {
-    res.status(200).json( noticeData);
-})
+//fetching all notices from db
+router.get('/' , getNoticeData)
+
+// create a notice
+router.post('/',  createNotice);
+
+//update
+router.patch('/:id' , updateNoticeData)
+
+//delete
+router.delete('/:id',  deleteNotice)
 
 export default router;

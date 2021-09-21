@@ -1,0 +1,20 @@
+.notice-data-edit-form {
+  padding: 10px;
+  height: 50vh;
+  background-color: rgb(180, 224, 209);
+  border-radius: 1.5rem;
+  opacity: 0.7;
+  width: 50%;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.notice-data-edit-form input {
+  padding: 10px;
+  border: none;
+  border-radius: 0.4rem;
+  width: 70%;
+  margin: 0.2rem;
+}
