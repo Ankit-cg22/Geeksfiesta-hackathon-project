@@ -23,4 +23,4 @@ This is a web app functions as the website of the CSE branch .
 
 - Node JS 
 - Express JS : Node JS framework
-- Mongo DB : For database 
+- Mongo DB : Database 
