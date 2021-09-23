@@ -28,8 +28,8 @@ export default function AuthForm({setCurrentUser}) {
 
             }
 
-            const st = email.substring(0,3);
-            if(st !== "b12")
+            const st = email.substring(0,4).toLowerCase();
+            if(st !== "b120")
             {
                 alert("Wrong place ! Website only allows CSE batch of 2020.")
                 return ;
