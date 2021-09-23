@@ -20,8 +20,17 @@ This is a web app functions as the website of the CSE branch .
 - HTML 
 - CSS 
 
+<h4>Packages</h4>
+
+- react-router : for routing functionalities
+- axios :to make api calls
+
 <h3> Backend </h3>
 
 - Node JS 
 - Express JS : Node JS framework
 - Mongo DB : Database 
+<h4>Packages</h4>
+
+- mongoose : for interacting with the database
+- cors : to enable cross origin resource sharing
