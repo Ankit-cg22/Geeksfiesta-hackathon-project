@@ -1,0 +1,16 @@
+.btn-component button {
+  background-color: rgb(180, 224, 209);
+  padding: 5px;
+}
+
+button {
+  border: none;
+  font-size: medium;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 0.4rem;
+}
+
+button:hover {
+  transform: scale(1.1);
+}

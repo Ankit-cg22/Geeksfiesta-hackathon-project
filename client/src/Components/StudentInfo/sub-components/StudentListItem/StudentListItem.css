@@ -1,0 +1,24 @@
+.student-list-item {
+  padding: 5px;
+  width: 100%;
+  display: flex;
+  text-align: left;
+}
+
+.student-list-item h4 {
+  width: 80%;
+}
+
+.btn {
+  width: 20%;
+}
+
+@media screen and (max-width: 450px) {
+  .student-list-item {
+    flex-direction: column;
+    border-bottom: 1px solid grey;
+  }
+  .student-subHead {
+    font-size: medium;
+  }
+}

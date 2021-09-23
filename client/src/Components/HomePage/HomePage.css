@@ -1,0 +1,82 @@
+body {
+  text-align: center;
+  margin: 0;
+}
+
+.content {
+  height: 85vh;
+  padding: 5px;
+}
+
+.details {
+  height: 100%;
+  display: flex;
+}
+
+.svgClass {
+  width: 50%;
+  position: relative;
+}
+
+.svgImage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 50vh;
+}
+
+.description {
+  width: 50%;
+  position: relative;
+}
+
+.paragraph {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 65%;
+  text-align: center;
+}
+
+.paragraph h2 {
+  padding: 15px;
+  font-size: 30px;
+}
+
+.paragraph p {
+  text-align: left;
+}
+
+.m1 {
+  position: absolute;
+  left: 45%;
+  height: 3vh;
+  animation: musicMotion1 1.5s ease-out infinite alternate;
+}
+
+.m2 {
+  position: absolute;
+  left: 30%;
+  height: 5vh;
+  animation: musicMotion2 2s ease-out infinite alternate;
+}
+
+@keyframes musicMotion1 {
+  from {
+    top: 20%;
+  }
+  to {
+    top: 15%;
+  }
+}
+
+@keyframes musicMotion2 {
+  from {
+    top: 20%;
+  }
+  to {
+    top: 12%;
+  }
+}
