@@ -10,6 +10,7 @@ This is a web app functions as the website of the CSE branch .
 - View student details
 - Each student can edit their own details.
 - Students can login using their institute email id.
+- Only students of CSE branch of 2020 batch can login/sign up.
 
 <h2>Tech stack used</h2>
 
