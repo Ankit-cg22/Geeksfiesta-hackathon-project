@@ -1,6 +1,6 @@
 <h1>Student Portal</h1>
 
-Live webite -> [Link](https://squad22-geeksfiesta.netlify.app/)
+<h2>Live webite -> [Link](https://squad22-geeksfiesta.netlify.app/)<h2>
 
 This is the project made during the hackathon of GeeksFiesta-2021 organised by the GFG student chapter of IIIT Bhubaneswar.
 
